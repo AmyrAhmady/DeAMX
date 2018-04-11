@@ -522,6 +522,12 @@ do
 							for i,argname in pairs(argList) do
 								if type(i) == 'number' then
 									stk = 12 + (i-1)*4
+									if(string.find(argname, "Text:") ~= nil) then argname = string.gsub(argname,"Text:","") end
+									if(string.find(argname, "Playertext:") ~= nil) then argname = string.gsub(argname,"Playertext:","") end
+									if(string.find(argname, "Float:") ~= nil) then argname = string.gsub(argname,"Float:","") end
+									if(string.find(argname, "%[%]") ~= nil) then argname = string.gsub(argname,"%[%]","") end
+									if(string.find(argname, "Menu:") ~= nil) then argname = string.gsub(argname,"Menu:","") end
+									if(string.find(argname, "File:") ~= nil) then argname = string.gsub(argname,"File:","") end
 									amx.frameVars[stk] = { argname, stk = stk }
 								end
 							end
@@ -562,7 +568,7 @@ do
 								end
 							end
 							if amx.learnedFunctionPrototypes[procStart] and amx.learnedFunctionPrototypes[procStart].returntype and g_TypeTags[amx.learnedFunctionPrototypes[procStart].returntype] then
-								fnName = g_TypeTags[amx.learnedFunctionPrototypes[procStart].returntype] .. ':' .. fnName
+								fnName = fnName
 							end
 							if amx.publics[procStart] then
 								fnName = 'public ' .. fnName
