@@ -196,277 +196,941 @@ function createFunctionCall(amx, fnName, prototype, replaceFn)
 end
 
 g_SAMPSyscallPrototypes = {
-	AddMenuItem = {'m', 'i', 's'},
-	AddPlayerClass = {'i', 'f', 'f', 'f', 'f', 'i', 'i', 'i', 'i', 'i', 'i'},
-	AddPlayerClassEx = {'t', 'i', 'f', 'f', 'f', 'f', 'i', 'i', 'i', 'i', 'i', 'i'},
-	AddStaticPickup = {'i', 'i', 'f', 'f', 'f'},
-	AddStaticVehicle = {'i', 'f', 'f', 'f', 'f', 'i', 'i'},
-	AddStaticVehicleEx = {'i', 'f', 'f', 'f', 'f', 'i', 'i', 'i'},
-	AddVehicleComponent = {'v', 'i'},
-	AllowAdminTeleport = {'b'},
-	AllowInteriorWeapons = {'b'},
-	AllowPlayerTeleport = {'p', 'b'},
-	ApplyAnimation = {'p', 's', 's', 'f', 'i', 'i', 'i', 'i', 'i'},
-	AttachObjectToPlayer = {'o', 'p', 'f', 'f', 'f', 'f', 'f', 'f'},
-	AttachPlayerObjectToPlayer = {'p', 'i', 'p', 'f', 'f', 'f', 'f', 'f', 'f'},
-	AttachTrailerToVehicle = {'v', 'v'},
-	
-	Ban = {'p'},
-	BanEx = {'p', 's'},
-	
-	ChangeVehicleColor = {'v', 'i', 'i'},
-	ChangeVehiclePaintjob = {'v', 'i'},
-	ClearAnimations = {'p'},
-	CreateExplosion = {'f', 'f', 'f', 'i', 'f'},
-	CreateMenu = {'s', 'i', 'f', 'f', 'f', 'f'},
-	CreateObject = {'i', 'f', 'f', 'f', 'f', 'f', 'f'},
-	CreatePickup = {'i', 'i', 'f', 'f', 'f'},
-	CreatePlayerObject = {'p', 'i', 'f', 'f', 'f', 'f', 'f', 'f'},
-	CreateVehicle = {'i', 'f', 'f', 'f', 'f', 'i', 'i', 'i'},
-	
-	DestroyObject = {'o',},
-	DestroyPickup = {'o'},
-	DestroyPlayerObject = {'p', 'i'},
-	DestroyVehicle = {'v'},
-	DetachTrailerFromVehicle = {'v'},
-	DisableInteriorEnterExits = {},
-	DisablePlayerCheckpoint = {'p'},
-	DisablePlayerRaceCheckpoint = {'p'},
-	
-	EnableStuntBonusForAll = {'b'},
-	EnableStuntBonusForPlayer = {'p', 'b'},
-	EnableTirePopping = {'b'},
-	EnableZoneNames = {'b'},
-	
-	ForceClassSelection = {'i'},
-	
-	GameModeExit = {},
-	GameTextForAll = {'s', 'i', 'i'},
-	GameTextForPlayer = {'p', 's', 'i', 'i'},
-	GetMaxPlayers = {},
-	GetObjectPos = {'o', 'fr', 'fr', 'fr'},
-	GetObjectRot = {'o', 'fr', 'fr', 'fr'},
-	GetPlayerAmmo = {'p'},
-	GetPlayerArmour = {'p', 'fr'},
-	GetPlayerColor = {'p'},
-	GetPlayerFacingAngle = {'p', 'fr'},
-	GetPlayerHealth = {'p', 'fr'},
-	GetPlayerInterior = {'p'},
-	GetPlayerIp = {'p', 'r', 'i'},
-	GetPlayerKeys = {'p', 'r', 'r', 'r'},
-	GetPlayerMoney = {'p'},
-	GetPlayerName = {'p', 'r', 'i'},
-	GetPlayerObjectPos = {'p', 'o', 'fr', 'fr', 'fr'},
-	GetPlayerObjectRot = {'p', 'o', 'fr', 'fr', 'fr'},
-	GetPlayerPing = {'p'},
-	GetPlayerPos = {'p', 'fr', 'fr', 'fr'},
-	GetPlayerScore = {'p'},
-	GetPlayerSkin = {'p'},
-	GetPlayerSpecialAction = {'p'},
-	GetPlayerState = {'p'},
-	GetPlayerTeam = {'p'},
-	GetPlayerTime = {'p', 'r', 'r'},
-	GetPlayerVehicleID = {'p'},
-	GetPlayerVirtualWorld = {'p'},
-	GetPlayerWantedLevel = {'p'},
-	GetPlayerWeapon = {'p'},
-	GetPlayerWeaponData = {'p', 'i', 'r', 'r'},
-	GetServerVarAsBool = {'s'},
-	GetServerVarAsInt = {'s'},
-	GetServerVarAsString = {'s', 'r', 'i'},
-	GetTickCount = {},
-	GetVehicleHealth = {'v', 'r'},
-	GetVehicleModel = {'v'},
-	GetVehiclePos = {'v', 'fr', 'fr', 'fr'},
-	GetVehicleTrailer = {'v'},
-	GetVehicleVirtualWorld = {'v'},
-	GetVehicleZAngle = {'v', 'fr'},
-	GetWeaponName = {'i', 'r', 'i'},
-	GivePlayerMoney = {'p', 'i'},
-	GivePlayerWeapon = {'p', 'i', 'i'},
-	
-	IsPlayerAdmin = {'p'},
-	IsPlayerConnected = {'p'},
-	IsPlayerInAnyVehicle = {'p'},
-	IsPlayerInCheckpoint = {'p'},
-	IsPlayerInRaceCheckpoint = {'p'},
-	IsPlayerInVehicle = {'p', 'v'},
-	IsTrailerAttachedToVehicle = {'v'},
-	IsValidObject = {'i'},
-	IsValidPlayerObject = {'p', 'o'},
-	
-	Kick = {'p'},
-	KillTimer = {'i'},
-	
-	LimitGlobalChatRadius = {'f'},
-	LinkVehicleToInterior = {'v', 'i'},
-	
-	MoveObject = {'o', 'f', 'f', 'f', 'f'},
-	MovePlayerObject = {'p', 'i', 'f', 'f', 'f', 'f'},
-	
-	PlayerPlaySound = {'p', 'i', 'f', 'f', 'f'},
-	PlayerSpectatePlayer = {'p', 'p', 'i'},
-	PlayerSpectateVehicle = {'p', 'i', 'i=1'},
-	PutPlayerInVehicle = {'p', 'v', 'i'},
-	
-	RemovePlayerFromVehicle = {'p'},
-	RemovePlayerMapIcon = {'p', 'i'},
-	RemoveVehicleComponent = {'v', 'i'},
-	ResetPlayerMoney = {'p'},
-	ResetPlayerWeapons = {'p'},
-	
-	SendClientMessage = {'p', 'c', 's'},
-	SendClientMessageToAll = {'c', 's'},
-	SendDeathMessage = {'p', 'p', 'i'},
-	SendPlayerMessageToAll = {'p', 's'},
-	SendPlayerMessageToPlayer = {'p', 'p', 's'},
-	SendRconCommand = {'s'},
-	SetCameraBehindPlayer = {'p'},
-	SetDisabledWeapons = {},
-	SetGameModeText = {'s'},
-	SetGravity = {'f'},
-	SetNameTagDrawDistance = {'f'},
-	SetObjectPos = {'o', 'f', 'f', 'f'},
-	SetObjectRot = {'o', 'f', 'f', 'f'},
-	SetPlayerAmmo = {'p', 'i', 'i'},
-	SetPlayerArmour = {'p', 'f'},
-	SetPlayerCameraLookAt = {'p', 'f', 'f', 'f'},
-	SetPlayerCameraPos = {'p', 'f', 'f', 'f'},
-	SetPlayerCheckpoint = {'p', 'f', 'f', 'f', 'f'},
-	SetPlayerColor = {'p', 'c'},
-	SetPlayerFacingAngle = {'p', 'f'},
-	SetPlayerHealth = {'p', 'f'},
-	SetPlayerInterior = {'p', 'i'},
-	SetPlayerMapIcon = {'p', 'i', 'f', 'f', 'f', 'i', 'c'},
-	SetPlayerMarkerForPlayer = {'p', 'p', 'c'},
-	SetPlayerName = {'p', 's'},
-	SetPlayerObjectPos = {'p', 'i', 'f', 'f', 'f'},
-	SetPlayerObjectRot = {'p', 'i', 'f', 'f', 'f'},
-	SetPlayerPos = {'p', 'f', 'f', 'f'},
-	SetPlayerPosFindZ = {'p', 'f', 'f', 'f'},
-	SetPlayerRaceCheckpoint = {'p', 'i', 'f', 'f', 'f', 'f', 'f', 'f', 'f'},
-	SetPlayerScore = {'p', 'i'},
-	SetPlayerSkin = {'p', 'i'},
-	SetPlayerSpecialAction = {'p', 'i'},
-	SetPlayerTeam = {'p', 't'},
-	SetPlayerTime = {'p', 'i', 'i'},
-	SetPlayerVirtualWorld = {'p', 'i'},
-	SetPlayerWantedLevel = {'p', 'i'},
-	SetPlayerWeather = {'p', 'i'},
-	SetPlayerWorldBounds = {'p', 'f', 'f', 'f', 'f'},
-	SetSpawnInfo = {'p', 't', 'i', 'f', 'f', 'f', 'f', 'i', 'i', 'i', 'i', 'i', 'i'},
-	SetTeamCount = {'i'},
-	SetTimer = {'s', 'i', 'b'},
-	SetTimerEx = {'s', 'i', 'b', 's'},
-	SetVehicleHealth = {'v', 'f'},
-	SetVehicleNumberPlate = {'v', 's'},
-	SetVehicleParamsForPlayer = {'v', 'p', 'b', 'b'},
-	SetVehiclePos = {'v', 'f', 'f', 'f'},
-	SetVehicleToRespawn = {'v'},
-	SetVehicleVirtualWorld = {'v', 'i'},
-	SetVehicleZAngle = {'v', 'f'},
-	SetWeather = {'i'},
-	SetWorldTime = {'i'},
-	ShowNameTags = {'b'},
-	ShowPlayerMarkers = {'b'},
-	ShowPlayerNameTagForPlayer = {'p', 'p', 'b'},
-	SpawnPlayer = {'p'},
-	StopObject = {'o'},
-	StopPlayerObject = {'p', 'i'},
-	
-	TextDrawAlignment = {'x', 'i'},
-	TextDrawBackgroundColor = {'x', 'c'},
-	TextDrawBoxColor = {'x', 'c'},
-	TextDrawColor = {'x', 'c'},
-	TextDrawCreate = {'f', 'f', 's', returntype='x'},
-	TextDrawDestroy = {'i'},
-	TextDrawFont = {'x', 'i'},
-	TextDrawHideForAll = {'i'},
-	TextDrawHideForPlayer = {'p', 'i'},
-	TextDrawLetterSize = {'x', 'f', 'f'},
-	TextDrawSetOutline = {'x', 'i'},
-	TextDrawSetProportional = {'x', 'b'},
-	TextDrawSetShadow = {'x', 'i'},
-	TextDrawSetString = {'x', 's'},
-	TextDrawShowForAll = {'x'},
-	TextDrawShowForPlayer = {'p', 'i'},
-	TextDrawTextSize = {'x', 'f', 'f'},
-	TextDrawUseBox = {'x', 'b'},
-	TogglePlayerClock = {'p', 'b'},
-	TogglePlayerControllable = {'p', 'b'},
-	TogglePlayerSpectating = {'p', 'b'},
-	
-	UsePlayerPedAnims = {},
-	
-	deleteproperty = {'i', 's', 'i'},
-	
-	existproperty = {'i', 's', 'i'},
-	
-	fblockread = {'h', 'r', 'i'},
-	fblockwrite = {'h', 'r', 'i'},
-	fclose = {'h'},
-	fexist = {'s'},
-	fgetchar = {'h', 'r', 'b'},
-	flength = {'h'},
-	float = {'i', returntype='f'},
-	floatabs = {'f', returntype='f'},
-	floatadd = {'f', 'f', returntype='f'},
-	floatcmp = {'f', 'f'},
-	floatcos = {'f', 'i', returntype='f'},
-	floatdiv = {'f', 'f', returntype='f'},
-	floatfract = {'f'},
-	floatlog = {'f', 'f', returntype='f'},
-	floatmul = {'f', 'f', returntype='f'},
-	floatpower = {'f', 'f', returntype='f'},
-	floatround = {'f', 'i', returntype='f'},
-	floatsin = {'f', 'i', returntype='f'},
-	floatsub = {'f', 'f', returntype='f'},
-	floatsqroot = {'f', returntype='f'},
-	floattan = {'f', 'i', returntype='f'},
-	floatstr = {'s', returntype='f'},	
-	fmatch = {'s', 's', 'i', 'i'},
-	fopen = {'s', 'i'},
-	format = {'r', 'i', 'm'},
-	fputchar = {'h', 'i', 'b'},
-	fread = {'h', 'r', 'i=256', 'b=0'},
-	fremove = {'s'},
-	fseek = {'h', 'i', 'i'},
-	ftemp = {},
-	fwrite = {'h', 's'},
-	
-	getarg = {'i'},
-	getdate = {'r', 'r', 'r'},
-	getproperty = {'i', 's', 'i', 'r'},
-	gettime = {'r', 'r', 'r'},
-	
-	ispacked = {'r'},
-	
-	memcpy = {'r', 'r', 'i', 'i', 'i'},
-	
-	numargs = {},
 	
 	print = {'s'},
-	printf = {'m'},
-	
-	random = {'i'},
-	
+
+	printf = {'s', 'm'},
+
+	format = {'s', 'i', 's', 'm'},
+
+	SendClientMessage = {'p', 'i', 's'},
+
+	SendClientMessageToAll = {'i', 's'},
+
+	SendPlayerMessageToPlayer = {'p', 'i', 's'},
+
+	SendPlayerMessageToAll = {'i', 's'},
+
+	SendDeathMessage = {'i', 'i', 'i'},
+
+	SendDeathMessageToPlayer = {'p', 'i', 'i', 'i'},
+
+	GameTextForAll = {'s', 'i', 'i'},
+
+	GameTextForPlayer = {'p', 's', 'i', 'i'},
+
+	SetTimer = {'s', 'i', 'i'},
+
+	SetTimerEx = {'s', 'i', 'i', 's', 'm'},
+
+	KillTimer = {'i'},
+
+	GetTickCount = {},
+
+	GetMaxPlayers = {},
+
+	CallRemoteFunction = {'s', 's', 'm'},
+
+	CallLocalFunction = {'s', 's', 'm'},
+
+	VectorSize = {'f', 'f', 'f', returntype='f'},
+
+	asin = {'f', returntype='f'},
+
+	acos = {'f', returntype='f'},
+
+	atan = {'f', returntype='f'},
+
+	atan2 = {'f', 'f', returntype='f'},
+
+	GetPlayerPoolSize = {},
+
+	GetVehiclePoolSize = {},
+
+	GetActorPoolSize = {},
+
+	SHA256_PassHash = {'s', 's', 's', 'i'},
+
+	SetSVarInt = {'s', 'i'},
+
+	GetSVarInt = {'s'},
+
+	SetSVarString = {'s', 's'},
+
+	GetSVarString = {'s', 's', 'i'},
+
+	SetSVarFloat = {'s', 'f'},
+
+	GetSVarFloat = {'s', returntype='f'},
+
+	DeleteSVar = {'s'},
+
+	GetSVarsUpperIndex = {},
+
+	GetSVarNameAtIndex = {'i', 's', 'i'},
+
+	GetSVarType = {'s'},
+
+	SetGameModeText = {'s'},
+
+	SetTeamCount = {'i'},
+
+	AddPlayerClass = {'i', 'f', 'f', 'f', 'f', 'i', 'i', 'i', 'i', 'i', 'i'},
+
+	AddPlayerClassEx = {'i', 'i', 'f', 'f', 'f', 'f', 'i', 'i', 'i', 'i', 'i', 'i'},
+
+	AddStaticVehicle = {'i', 'f', 'f', 'f', 'f', 'i', 'i'},
+
+	AddStaticVehicleEx = {'i', 'f', 'f', 'f', 'f', 'i', 'i', 'i', 'i'},
+
+	AddStaticPickup = {'i', 'i', 'f', 'f', 'f', 'i'},
+
+	CreatePickup = {'i', 'i', 'f', 'f', 'f', 'i'},
+
+	DestroyPickup = {'i'},
+
+	ShowNameTags = {'i'},
+
+	ShowPlayerMarkers = {'i'},
+
+	GameModeExit = {},
+
+	SetWorldTime = {'i'},
+
+	GetWeaponName = {'i', 's', 'i'},
+
+	EnableTirePopping = {'i'},
+
+	EnableVehicleFriendlyFire = {},
+
+	AllowInteriorWeapons = {'i'},
+
+	SetWeather = {'i'},
+
+	SetGravity = {'f'},
+
+	AllowAdminTeleport = {'i'},
+
+	SetDeathDropAmount = {'i'},
+
+	CreateExplosion = {'f', 'f', 'f', 'i', 'f'},
+
+	EnableZoneNames = {'i'},
+
+	UsePlayerPedAnims = {'i'},
+
+	DisableInteriorEnterExits = {'i'},
+
+	SetNameTagDrawDistance = {'f'},
+
+	DisableNameTagLOS = {'i'},
+
+	LimitGlobalChatRadius = {'f'},
+
+	LimitPlayerMarkerRadius = {'f'},
+
+	ConnectNPC = {'s', 's'},
+
+	IsPlayerNPC = {'p'},
+
+	IsPlayerAdmin = {'p'},
+
+	Kick = {'p'},
+
+	Ban = {'p'},
+
+	BanEx = {'p', 's'},
+
+	SendRconCommand = {'s'},
+
+	GetPlayerNetworkStats = {'p', 's', 'i'},
+
+	GetNetworkStats = {'s', 'i'},
+
+	GetPlayerVersion = {'p', 's', 'i'},
+
+	BlockIpAddress = {'s', 'i'},
+
+	UnBlockIpAddress = {'s'},
+
+	GetServerVarAsString = {'s', 's', 'i'},
+
+	GetServerVarAsInt = {'s'},
+
+	GetServerVarAsBool = {'s'},
+
+	GetConsoleVarAsString = {'s', 's', 'i'},
+
+	GetConsoleVarAsInt = {'s'},
+
+	GetConsoleVarAsBool = {'s'},
+
+	GetServerTickRate = {},
+
+	NetStats_GetConnectedTime = {'p'},
+
+	NetStats_MessagesReceived = {'p'},
+
+	NetStats_BytesReceived = {'p'},
+
+	NetStats_MessagesSent = {'p'},
+
+	NetStats_BytesSent = {'p'},
+
+	NetStats_MessagesRecvPerSecond = {'p'},
+
+	NetStats_PacketLossPercent = {'p', returntype='f'},
+
+	NetStats_ConnectionStatus = {'p'},
+
+	NetStats_GetIpPort = {'p', 's', 'i'},
+
+	CreateMenu = {'s', 'i', 'f', 'f', 'f', 'f'},
+
+	DestroyMenu = {'m'},
+
+	AddMenuItem = {'m', 's'},
+
+	SetMenuColumnHeader = {'m', 's'},
+
+	ShowMenuForPlayer = {'m'},
+
+	HideMenuForPlayer = {'m'},
+
+	IsValidMenu = {'m'},
+
+	DisableMenu = {'m'},
+
+	DisableMenuRow = {'m'},
+
+	GetPlayerMenu = {'p'},
+
+	TextDrawCreate = {'f', 'f', 's', returntype='x'},
+
+	TextDrawDestroy = {'x'},
+
+	TextDrawLetterSize = {'x', 'f', 'f'},
+
+	TextDrawTextSize = {'x', 'f', 'f'},
+
+	TextDrawAlignment = {'x', 'i'},
+
+	TextDrawColor = {'x', 'i'},
+
+	TextDrawUseBox = {'x', 'i'},
+
+	TextDrawBoxColor = {'x', 'i'},
+
+	TextDrawSetShadow = {'x', 'i'},
+
+	TextDrawSetOutline = {'x', 'i'},
+
+	TextDrawBackgroundColor = {'x', 'i'},
+
+	TextDrawFont = {'x', 'i'},
+
+	TextDrawSetProportional = {'x', 'i'},
+
+	TextDrawSetSelectable = {'x', 'i'},
+
+	TextDrawShowForPlayer = {'p', 'x'},
+
+	TextDrawHideForPlayer = {'p', 'x'},
+
+	TextDrawShowForAll = {'x'},
+
+	TextDrawHideForAll = {'x'},
+
+	TextDrawSetString = {'x', 's'},
+
+	TextDrawSetPreviewModel = {'x', 'i'},
+
+	TextDrawSetPreviewRot = {'x', 'f', 'f', 'f', 'f'},
+
+	TextDrawSetPreviewVehCol = {'x', 'i', 'i'},
+
+	GangZoneCreate = {'f', 'f', 'f', 'f'},
+
+	GangZoneDestroy = {'i'},
+
+	GangZoneShowForPlayer = {'p', 'i', 'i'},
+
+	GangZoneShowForAll = {'i', 'i'},
+
+	GangZoneHideForPlayer = {'p', 'i'},
+
+	GangZoneHideForAll = {'i'},
+
+	GangZoneFlashForPlayer = {'p', 'i', 'i'},
+
+	GangZoneFlashForAll = {'i', 'i'},
+
+	GangZoneStopFlashForPlayer = {'p', 'i'},
+
+	GangZoneStopFlashForAll = {'i'},
+
+	Create3DTextLabel = {'s', 'i', 'f', 'f', 'f', 'f', 'i', 'i', returntype='d'},
+
+	Delete3DTextLabel = {'d'},
+
+	Attach3DTextLabelToPlayer = {'d', 'p', 'f', 'f', 'f'},
+
+	Attach3DTextLabelToVehicle = {'d', 'v', 'f', 'f', 'f'},
+
+	Update3DTextLabelText = {'d', 'i', 's'},
+
+	CreatePlayer3DTextLabel = {'p', 's', 'i', 'f', 'f', 'f', 'f', 'i', 'i', 'i', returntype='dp'},
+
+	DeletePlayer3DTextLabel = {'p', 'dp'},
+
+	UpdatePlayer3DTextLabelText = {'p', 'dp', 'i', 's'},
+
+	ShowPlayerDialog = {'p', 'i', 'i', 's', 's', 's', 's'},
+
+	SetSpawnInfo = {'p', 'i', 'i', 'f', 'f', 'f', 'f', 'i', 'i', 'i', 'i', 'i', 'i'},
+
+	SpawnPlayer = {'p'},
+
+	SetPlayerPos = {'p', 'f', 'f', 'f'},
+
+	SetPlayerPosFindZ = {'p', 'f', 'f', 'f'},
+
+	GetPlayerPos = {'p', 'fr', 'fr', 'fr'},
+
+	SetPlayerFacingAngle = {'p', 'f'},
+
+	GetPlayerFacingAngle = {'p', 'fr'},
+
+	IsPlayerInRangeOfPoint = {'p', 'f', 'f', 'f', 'f'},
+
+	GetPlayerDistanceFromPoint = {'p', 'f', 'f', 'f', returntype='f'},
+
+	IsPlayerStreamedIn = {'p', 'p'},
+
+	SetPlayerInterior = {'p', 'i'},
+
+	GetPlayerInterior = {'p'},
+
+	SetPlayerHealth = {'p', 'f'},
+
+	GetPlayerHealth = {'p', 'fr'},
+
+	SetPlayerArmour = {'p', 'f'},
+
+	GetPlayerArmour = {'p', 'fr'},
+
+	SetPlayerAmmo = {'p', 'i', 'i'},
+
+	GetPlayerAmmo = {'p'},
+
+	GetPlayerWeaponState = {'p'},
+
+	GetPlayerTargetPlayer = {'p'},
+
+	GetPlayerTargetActor = {'p'},
+
+	SetPlayerTeam = {'p', 'i'},
+
+	GetPlayerTeam = {'p'},
+
+	SetPlayerScore = {'p', 'i'},
+
+	GetPlayerScore = {'p'},
+
+	GetPlayerDrunkLevel = {'p'},
+
+	SetPlayerDrunkLevel = {'p', 'i'},
+
+	SetPlayerColor = {'p', 'i'},
+
+	GetPlayerColor = {'p'},
+
+	SetPlayerSkin = {'p', 'i'},
+
+	GetPlayerSkin = {'p'},
+
+	GivePlayerWeapon = {'p', 'i', 'i'},
+
+	ResetPlayerWeapons = {'p'},
+
+	SetPlayerArmedWeapon = {'p', 'i'},
+
+	GetPlayerWeaponData = {'p', 'i', 'r', 'r'},
+
+	GivePlayerMoney = {'p', 'i'},
+
+	ResetPlayerMoney = {'p'},
+
+	SetPlayerName = {'p', 's'},
+
+	GetPlayerMoney = {'p'},
+
+	GetPlayerState = {'p'},
+
+	GetPlayerIp = {'p', 's', 'i'},
+
+	GetPlayerPing = {'p'},
+
+	GetPlayerWeapon = {'p'},
+
+	GetPlayerKeys = {'p', 'r', 'r', 'r'},
+
+	GetPlayerName = {'p', 's', 'i'},
+
+	SetPlayerTime = {'p', 'i', 'i'},
+
+	GetPlayerTime = {'p', 'r', 'r'},
+
+	TogglePlayerClock = {'p', 'i'},
+
+	SetPlayerWeather = {'p', 'i'},
+
+	ForceClassSelection = {'p'},
+
+	SetPlayerWantedLevel = {'p', 'i'},
+
+	GetPlayerWantedLevel = {'p'},
+
+	SetPlayerFightingStyle = {'p', 'i'},
+
+	GetPlayerFightingStyle = {'p'},
+
+	SetPlayerVelocity = {'p', 'f', 'f', 'f'},
+
+	GetPlayerVelocity = {'p', 'fr', 'fr', 'fr'},
+
+	PlayCrimeReportForPlayer = {'p', 'i', 'i'},
+
+	PlayAudioStreamForPlayer = {'p', 's', 'f', 'f', 'f', 'f', 'i'},
+
+	StopAudioStreamForPlayer = {'p'},
+
+	SetPlayerShopName = {'p', 's'},
+
+	SetPlayerSkillLevel = {'p', 'i', 'i'},
+
+	GetPlayerSurfingVehicleID = {'p'},
+
+	GetPlayerSurfingObjectID = {'p'},
+
+	RemoveBuildingForPlayer = {'p', 'i', 'f', 'f', 'f', 'f'},
+
+	GetPlayerLastShotVectors = {'p', 'fr', 'fr', 'fr', 'fr', 'fr', 'fr'},
+
+	SetPlayerAttachedObject = {'p', 'i', 'i', 'i', 'f', 'f', 'f', 'f', 'f', 'f', 'f', 'f', 'f', 'i', 'i'},
+
+	RemovePlayerAttachedObject = {'p', 'i'},
+
+	IsPlayerAttachedObjectSlotUsed = {'p', 'i'},
+
+	EditAttachedObject = {'p', 'i'},
+
+	CreatePlayerTextDraw = {'p', 'f', 'f', 's', returntype='xp'},
+
+	PlayerTextDrawDestroy = {'p', 'xp'},
+
+	PlayerTextDrawLetterSize = {'p', 'xp', 'f', 'f'},
+
+	PlayerTextDrawTextSize = {'p', 'xp', 'f', 'f'},
+
+	PlayerTextDrawAlignment = {'p', 'xp', 'i'},
+
+	PlayerTextDrawColor = {'p', 'xp', 'i'},
+
+	PlayerTextDrawUseBox = {'p', 'xp', 'i'},
+
+	PlayerTextDrawBoxColor = {'p', 'xp', 'i'},
+
+	PlayerTextDrawSetShadow = {'p', 'xp', 'i'},
+
+	PlayerTextDrawSetOutline = {'p', 'xp', 'i'},
+
+	PlayerTextDrawBackgroundColor = {'p', 'xp', 'i'},
+
+	PlayerTextDrawFont = {'p', 'xp', 'i'},
+
+	PlayerTextDrawSetProportional = {'p', 'xp', 'i'},
+
+	PlayerTextDrawSetSelectable = {'p', 'xp', 'i'},
+
+	PlayerTextDrawShow = {'p', 'xp'},
+
+	PlayerTextDrawHide = {'p', 'xp'},
+
+	PlayerTextDrawSetString = {'p', 'xp', 's'},
+
+	PlayerTextDrawSetPreviewModel = {'p', 'xp', 'i'},
+
+	PlayerTextDrawSetPreviewRot = {'p', 'xp', 'f', 'f', 'f', 'f'},
+
+	PlayerTextDrawSetPreviewVehCol = {'p', 'xp', 'i', 'i'},
+
+	SetPVarInt = {'p', 's', 'i'},
+
+	GetPVarInt = {'p', 's'},
+
+	SetPVarString = {'p', 's', 's'},
+
+	GetPVarString = {'p', 's', 's', 'i'},
+
+	SetPVarFloat = {'p', 's', 'f'},
+
+	GetPVarFloat = {'p', 's', returntype='f'},
+
+	DeletePVar = {'p', 's'},
+
+	GetPVarsUpperIndex = {'p'},
+
+	GetPVarNameAtIndex = {'p', 'i', 's', 'i'},
+
+	GetPVarType = {'p', 's'},
+
+	SetPlayerChatBubble = {'p', 's', 'i', 'f', 'i'},
+
+	PutPlayerInVehicle = {'p', 'v', 'i'},
+
+	GetPlayerVehicleID = {'p'},
+
+	GetPlayerVehicleSeat = {'p'},
+
+	RemovePlayerFromVehicle = {'p'},
+
+	TogglePlayerControllable = {'p', 'i'},
+
+	PlayerPlaySound = {'p', 'i', 'f', 'f', 'f'},
+
+	ApplyAnimation = {'p', 's', 's', 'f', 'i', 'i', 'i', 'i', 'i', 'i'},
+
+	ClearAnimations = {'p', 'i'},
+
+	GetPlayerAnimationIndex = {'p'},
+
+	GetAnimationName = {'i', 's', 'i', 's', 'i'},
+
+	GetPlayerSpecialAction = {'p'},
+
+	SetPlayerSpecialAction = {'p', 'i'},
+
+	DisableRemoteVehicleCollisions = {'p', 'i'},
+
+	SetPlayerCheckpoint = {'p', 'f', 'f', 'f', 'f'},
+
+	DisablePlayerCheckpoint = {'p'},
+
+	SetPlayerRaceCheckpoint = {'p', 'i', 'f', 'f', 'f', 'f', 'f', 'f', 'f'},
+
+	DisablePlayerRaceCheckpoint = {'p'},
+
+	SetPlayerWorldBounds = {'p', 'f', 'f', 'f', 'f'},
+
+	SetPlayerMarkerForPlayer = {'p', 'p', 'i'},
+
+	ShowPlayerNameTagForPlayer = {'p', 'p', 'i'},
+
+	SetPlayerMapIcon = {'p', 'i', 'f', 'f', 'f', 'i', 'i', 'i'},
+
+	RemovePlayerMapIcon = {'p', 'i'},
+
+	AllowPlayerTeleport = {'p', 'i'},
+
+	SetPlayerCameraPos = {'p', 'f', 'f', 'f'},
+
+	SetPlayerCameraLookAt = {'p', 'f', 'f', 'f', 'i'},
+
+	SetCameraBehindPlayer = {'p'},
+
+	GetPlayerCameraPos = {'p', 'fr', 'fr', 'fr'},
+
+	GetPlayerCameraFrontVector = {'p', 'fr', 'fr', 'fr'},
+
+	GetPlayerCameraMode = {'p'},
+
+	EnablePlayerCameraTarget = {'p', 'i'},
+
+	GetPlayerCameraTargetObject = {'p'},
+
+	GetPlayerCameraTargetVehicle = {'p'},
+
+	GetPlayerCameraTargetPlayer = {'p'},
+
+	GetPlayerCameraTargetActor = {'p'},
+
+	GetPlayerCameraAspectRatio = {'p', returntype='f'},
+
+	GetPlayerCameraZoom = {'p', returntype='f'},
+
+	AttachCameraToObject = {'p', 'o'},
+
+	AttachCameraToPlayerObject = {'p', 'o'},
+
+	InterpolateCameraPos = {'p', 'f', 'f', 'f', 'f', 'f', 'f', 'i', 'i'},
+
+	InterpolateCameraLookAt = {'p', 'f', 'f', 'f', 'f', 'f', 'f', 'i', 'i'},
+
+	IsPlayerConnected = {'p'},
+
+	IsPlayerInVehicle = {'p', 'v'},
+
+	IsPlayerInAnyVehicle = {'p'},
+
+	IsPlayerInCheckpoint = {'p'},
+
+	IsPlayerInRaceCheckpoint = {'p'},
+
+	SetPlayerVirtualWorld = {'p', 'i'},
+
+	GetPlayerVirtualWorld = {'p'},
+
+	EnableStuntBonusForPlayer = {'p', 'i'},
+
+	EnableStuntBonusForAll = {'i'},
+
+	TogglePlayerSpectating = {'p', 'i'},
+
+	PlayerSpectatePlayer = {'p', 'p', 'i'},
+
+	PlayerSpectateVehicle = {'p', 'v', 'i'},
+
+	StartRecordingPlayerData = {'p', 'i', 's'},
+
+	StopRecordingPlayerData = {'p'},
+
+	SelectTextDraw = {'p', 'i'},
+
+	CancelSelectTextDraw = {'p'},
+
+	CreateExplosionForPlayer = {'p', 'f', 'f', 'f', 'i', 'f'},
+
+	CreateActor = {'i', 'f', 'f', 'f', 'f'},
+
+	DestroyActor = {'i'},
+
+	IsActorStreamedIn = {'i', 'p'},
+
+	SetActorVirtualWorld = {'i', 'i'},
+
+	GetActorVirtualWorld = {'i'},
+
+	ApplyActorAnimation = {'i', 's', 's', 'f', 'i', 'i', 'i', 'i', 'i'},
+
+	ClearActorAnimations = {'i'},
+
+	SetActorPos = {'i', 'f', 'f', 'f'},
+
+	GetActorPos = {'i', 'fr', 'fr', 'fr'},
+
+	SetActorFacingAngle = {'i', 'f'},
+
+	GetActorFacingAngle = {'i', 'fr'},
+
+	SetActorHealth = {'i', 'f'},
+
+	GetActorHealth = {'i', 'fr'},
+
+	SetActorInvulnerable = {'i', 'i'},
+
+	IsActorInvulnerable = {'i'},
+
+	IsValidActor = {'i'},
+
+	HTTP = {'i', 'i', 's', 's', 's'},
+
+	CreateObject = {'i', 'f', 'f', 'f', 'f', 'f', 'f', 'f'},
+
+	AttachObjectToVehicle = {'o', 'v', 'f', 'f', 'f', 'f', 'f', 'f'},
+
+	AttachObjectToObject = {'o', 'i', 'f', 'f', 'f', 'f', 'f', 'f', 'i'},
+
+	AttachObjectToPlayer = {'o', 'p', 'f', 'f', 'f', 'f', 'f', 'f'},
+
+	SetObjectPos = {'o', 'f', 'f', 'f'},
+
+	GetObjectPos = {'o', 'fr', 'fr', 'fr'},
+
+	SetObjectRot = {'o', 'f', 'f', 'f'},
+
+	GetObjectRot = {'o', 'fr', 'fr', 'fr'},
+
+	GetObjectModel = {'o'},
+
+	SetObjectNoCameraCol = {'o'},
+
+	IsValidObject = {'o'},
+
+	DestroyObject = {'o'},
+
+	MoveObject = {'o', 'f', 'f', 'f', 'f', 'f', 'f', 'f'},
+
+	StopObject = {'o'},
+
+	IsObjectMoving = {'o'},
+
+	EditObject = {'p', 'o'},
+
+	EditPlayerObject = {'p', 'o'},
+
+	SelectObject = {'p'},
+
+	CancelEdit = {'p'},
+
+	CreatePlayerObject = {'p', 'i', 'f', 'f', 'f', 'f', 'f', 'f', 'f'},
+
+	AttachPlayerObjectToVehicle = {'p', 'o', 'v', 'f', 'f', 'f', 'f', 'f', 'f'},
+
+	SetPlayerObjectPos = {'p', 'o', 'f', 'f', 'f'},
+
+	GetPlayerObjectPos = {'p', 'o', 'fr', 'fr', 'fr'},
+
+	SetPlayerObjectRot = {'p', 'o', 'f', 'f', 'f'},
+
+	GetPlayerObjectRot = {'p', 'o', 'fr', 'fr', 'fr'},
+
+	GetPlayerObjectModel = {'p', 'o'},
+
+	SetPlayerObjectNoCameraCol = {'p', 'o'},
+
+	IsValidPlayerObject = {'p', 'o'},
+
+	DestroyPlayerObject = {'p', 'o'},
+
+	MovePlayerObject = {'p', 'o', 'f', 'f', 'f', 'f', 'f', 'f', 'f'},
+
+	StopPlayerObject = {'p', 'o'},
+
+	IsPlayerObjectMoving = {'p', 'o'},
+
+	AttachPlayerObjectToPlayer = {'i', 'o', 'i', 'f', 'f', 'f', 'f', 'f', 'f'},
+
+	SetObjectMaterial = {'o', 'i', 'i', 's', 's', 'i'},
+
+	SetPlayerObjectMaterial = {'p', 'o', 'i', 'i', 's', 's', 'i'},
+
+	SetObjectMaterialText = {'o', 's', 'i', 'i', 's', 'i', 'i', 'i', 'i', 'i'},
+
+	SetPlayerObjectMaterialText = {'p', 'o', 's', 'i', 'i', 's', 'i', 'i', 'i', 'i', 'i'},
+
+	SetObjectsDefaultCameraCol = {'i'},
+
+	CreateVehicle = {'i', 'f', 'f', 'f', 'f', 'i', 'i', 'i', 'i'},
+
+	DestroyVehicle = {'v'},
+
+	IsVehicleStreamedIn = {'v', 'p'},
+
+	GetVehiclePos = {'v', 'fr', 'fr', 'fr'},
+
+	SetVehiclePos = {'v', 'f', 'f', 'f'},
+
+	GetVehicleZAngle = {'v', 'fr'},
+
+	GetVehicleRotationQuat = {'v', 'fr', 'fr', 'fr', 'fr'},
+
+	GetVehicleDistanceFromPoint = {'v', 'f', 'f', 'f', returntype='f'},
+
+	SetVehicleZAngle = {'v', 'f'},
+
+	SetVehicleParamsForPlayer = {'v', 'p', 'i', 'i'},
+
+	ManualVehicleEngineAndLights = {},
+
+	SetVehicleParamsEx = {'v', 'i', 'i', 'i', 'i', 'i', 'i', 'i'},
+
+	GetVehicleParamsEx = {'v', 'r', 'r', 'r', 'r', 'r', 'r', 'r'},
+
+	GetVehicleParamsSirenState = {'v'},
+
+	SetVehicleParamsCarDoors = {'v', 'i', 'i', 'i', 'i'},
+
+	GetVehicleParamsCarDoors = {'v', 'r', 'r', 'r', 'r'},
+
+	SetVehicleParamsCarWindows = {'v', 'i', 'i', 'i', 'i'},
+
+	GetVehicleParamsCarWindows = {'v', 'r', 'r', 'r', 'r'},
+
+	SetVehicleToRespawn = {'v'},
+
+	LinkVehicleToInterior = {'v', 'i'},
+
+	AddVehicleComponent = {'v', 'i'},
+
+	RemoveVehicleComponent = {'v', 'i'},
+
+	ChangeVehicleColor = {'v', 'i', 'i'},
+
+	ChangeVehiclePaintjob = {'v', 'i'},
+
+	SetVehicleHealth = {'v', 'f'},
+
+	GetVehicleHealth = {'v', 'fr'},
+
+	AttachTrailerToVehicle = {'i', 'v'},
+
+	DetachTrailerFromVehicle = {'v'},
+
+	IsTrailerAttachedToVehicle = {'v'},
+
+	GetVehicleTrailer = {'v'},
+
+	SetVehicleNumberPlate = {'v', 's'},
+
+	GetVehicleModel = {'v'},
+
+	GetVehicleComponentInSlot = {'v', 'i'},
+
+	GetVehicleComponentType = {'i'},
+
+	RepairVehicle = {'v'},
+
+	GetVehicleVelocity = {'v', 'fr', 'fr', 'fr'},
+
+	SetVehicleVelocity = {'v', 'f', 'f', 'f'},
+
+	SetVehicleAngularVelocity = {'v', 'f', 'f', 'f'},
+
+	GetVehicleDamageStatus = {'v', 'r', 'r', 'r', 'r'},
+
+	UpdateVehicleDamageStatus = {'v', 'i', 'i', 'i', 'i'},
+
+	GetVehicleModelInfo = {'i', 'i', 'fr', 'fr', 'fr'},
+
+	SetVehicleVirtualWorld = {'v', 'i'},
+
+	GetVehicleVirtualWorld = {'v'},
+
+	heapspace = {},
+
+	funcidx = {'s'},
+
+	numargs = {},
+
+	getarg = {'i', 'i'},
+
 	setarg = {'i', 'i', 'i'},
+
+	tolower = {'i'},
+
+	toupper = {'i'},
+
+	swapchars = {'i'},
+
+	random = {'i'},
+
+	min = {'i', 'i'},
+
+	max = {'i', 'i'},
+
+	clamp = {'i', 'i', 'i'},
+
+	getproperty = {'i', 's', 'i', 's'},
+
 	setproperty = {'i', 's', 'i', 's'},
-	strcat = {'r', 's', 'i'},
-	strcmp = {'s', 's', 'b=0', 'i=2147483647'},
-	strdel = {'r', 'i', 'i'},
-	strfind = {'s', 's', 'b', 'i'},
-	strins = {'r', 's', 'i', 'i'},
+
+	deleteproperty = {'i', 's', 'i'},
+
+	existproperty = {'i', 's', 'i'},
+
+	sendstring = {'s', 's'},
+
+	sendpacket = {'s', 'i', 's'},
+
+	listenport = {'i'},
+
+	fopen = {'s', 'i', returntype='h'},
+
+	fclose = {'h'},
+
+	ftemp = {returntype='h'},
+
+	fremove = {'s'},
+
+	fwrite = {'h', 's'},
+
+	fread = {'h', 's', 'i', 'b'},
+
+	fputchar = {'h', 'i', 'b'},
+
+	fgetchar = {'h', 'i', 'b'},
+
+	fblockwrite = {'h', 's', 'i'},
+
+	fblockread = {'h', 's', 'i'},
+
+	fseek = {'h', 'i', 'i'},
+
+	flength = {'h'},
+
+	fexist = {'s'},
+
+	fmatch = {'s', 's', 'i', 'i'},
+
+	float = {'i', returntype='f'},
+
+	floatstr = {'s', returntype='f'},
+
+	floatmul = {'f', 'f', returntype='f'},
+
+	floatdiv = {'f', 'f', returntype='f'},
+
+	floatadd = {'f', 'f', returntype='f'},
+
+	floatsub = {'f', 'f', returntype='f'},
+
+	floatfract = {'f', returntype='f'},
+
+	floatround = {'f', 'i'},
+
+	floatcmp = {'f', 'f'},
+
+	floatsqroot = {'f', returntype='f'},
+
+	floatpower = {'f', 'f', returntype='f'},
+
+	floatlog = {'f', 'f', returntype='f'},
+
+	floatsin = {'f', 'i', returntype='f'},
+
+	floatcos = {'f', 'i', returntype='f'},
+
+	floattan = {'f', 'i', returntype='f'},
+
+	floatabs = {'f', returntype='f'},
+
 	strlen = {'s'},
-	strmid = {'r', 's', 'i', 'i', 'i'},
-	strpack = {'r', 's', 'i'},
-	strunpack = {'r', 's', 'i'},
+
+	strpack = {'s', 's', 'i'},
+
+	strunpack = {'s', 's', 'i'},
+
+	strcat = {'s', 's', 'i'},
+
+	strmid = {'s', 's', 'i', 'i', 'i'},
+
+	strins = {'s', 's', 'i', 'i'},
+
+	strdel = {'s', 'i', 'i'},
+
+	strcmp = {'s', 's', 'b', 'i'},
+
+	strfind = {'s', 's', 'b', 'i'},
+
 	strval = {'s'},
-	
-	tickcount = {'i'},
-	
-	uudecode = {'r', 's', 'i'},
-	uuencode = {'r', 's', 'i', 'i'},
-	
-	valstr = {'r', 'i', 'b'},
+
+	valstr = {'s', 'i', 'b'},
+
+	ispacked = {'s'},
+
+	uudecode = {'s', 's', 'i'},
+
+	uuencode = {'s', 's', 'i', 'i'},
+
+	memcpy = {'s', 's', 'i', 'i', 'i'},
+
+	gettime = {'r', 'r', 'r'},
+
+	getdate = {'r', 'r', 'r'},
+
+	tickcount = {'r'},
+
+
+
 }
