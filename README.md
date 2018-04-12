@@ -19,3 +19,4 @@ I am just updating it in my free times.
 
 # To Do:
 - Adding some famous includes like streamer, sscanf and etc.
+- Adding Anti-DeAMX bypass
