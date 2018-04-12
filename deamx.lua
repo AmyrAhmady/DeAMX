@@ -1,7 +1,8 @@
 --[[
 
 	DeAMX, trc_'s .amx -> .pwn decompiler
-	  v0.3
+	  (2008)
+	Updated by iAmir (C) 2018
 
   Licence
 	
@@ -30,32 +31,6 @@
 	script and re-release it as your own script, unless explicitely
 	approved by the script's author.
 
-  Usage
-
-	DeAMX is a collection of Lua scripts, which means you need
-	Lua to run it. If you don't have Lua yet, you can get it for
-	free from the official download page:
-	  http://luabinaries.luaforge.net/download.html
-	
-	Once you have Lua, there are two ways to decompile a script:
-	- Place the .lua files and the .bat file in some folder,
-	  edit the bat file in a text editor like Notepad, and make
-	  sure the path to lua5.1.exe is correct. Save the file and
-	  close it.
-	  
-	  To run, open a command prompt in the folder where you placed
-	  deamx, and type:
-	  
-	    deamx path\to\amxfile.amx
-	  
-	- Or, place the .lua files in the folder where you installed
-	  Lua, open a command prompt in the Lua folder, and type:
-	  
-	    lua5.1 deamx.lua path\to\amxfile.amx
-		
-    In both cases, the .amx file will be decompiled and the
-	resulting code will be placed in a .pwn file in the same
-	directory as the .amx file.
                                                                 ]]--
 
 function include(file)
@@ -67,12 +42,15 @@ include('deamx_opcodes.lua')
 include('deamx_events.lua')
 include('deamx_syscalls.lua')
 
-g_ParamTypeToName = { p = 'playerid', o = 'objectid' }
+g_ParamTypeToName = { p = 'playerid', o = 'objectid', v = 'vehicleid'}
 g_TypeTags = {
 	f = 'Float',
 	h = 'File',
 	m = 'Menu',
-	x = 'Text'
+	x = 'Text',
+	xp = 'PlayerText',
+	d = 'Text3D',
+	dp = 'PlayerText3D'
 }
 
 sortDescending = function(a, b) return b < a end
@@ -523,7 +501,7 @@ do
 								if type(i) == 'number' then
 									stk = 12 + (i-1)*4
 									if(string.find(argname, "Text:") ~= nil) then argname = string.gsub(argname,"Text:","") end
-									if(string.find(argname, "Playertext:") ~= nil) then argname = string.gsub(argname,"Playertext:","") end
+									if(string.find(argname, "Playertext:") ~= nil) then argname = string.gsub(argname,"PlayerText:","") end
 									if(string.find(argname, "Float:") ~= nil) then argname = string.gsub(argname,"Float:","") end
 									if(string.find(argname, "%[%]") ~= nil) then argname = string.gsub(argname,"%[%]","") end
 									if(string.find(argname, "Menu:") ~= nil) then argname = string.gsub(argname,"Menu:","") end
