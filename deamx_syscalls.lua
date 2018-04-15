@@ -385,23 +385,23 @@ g_SAMPSyscallPrototypes = {
 
 	NetStats_GetIpPort = {'p', 's', 'i'},
 
-	CreateMenu = {'s', 'i', 'f', 'f', 'f', 'f'},
+	CreateMenu = {'s', 'i', 'f', 'f', 'f', 'f', returntype='n'},
 
-	DestroyMenu = {'m'},
+	DestroyMenu = {'n'},
 
-	AddMenuItem = {'m', 's'},
+	AddMenuItem = {'n', 's'},
 
-	SetMenuColumnHeader = {'m', 's'},
+	SetMenuColumnHeader = {'n', 's'},
 
-	ShowMenuForPlayer = {'m'},
+	ShowMenuForPlayer = {'n', 'p'},
 
-	HideMenuForPlayer = {'m'},
+	HideMenuForPlayer = {'n', 'p'},
 
-	IsValidMenu = {'m'},
+	IsValidMenu = {'n'},
 
-	DisableMenu = {'m'},
+	DisableMenu = {'n'},
 
-	DisableMenuRow = {'m'},
+	DisableMenuRow = {'n'},
 
 	GetPlayerMenu = {'p'},
 
