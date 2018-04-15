@@ -46,7 +46,7 @@ g_ParamTypeToName = { p = 'playerid', o = 'objectid', v = 'vehicleid'}
 g_TypeTags = {
 	f = 'Float',
 	h = 'File',
-	m = 'Menu',
+	n = 'Menu',
 	x = 'Text',
 	xp = 'PlayerText',
 	d = 'Text3D',
