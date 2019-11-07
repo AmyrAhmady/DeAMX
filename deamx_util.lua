@@ -233,6 +233,7 @@ function getArrayMaxDimensionIndices(amx, headerStart, headerLength)
 	local prevOffset
 	while offset < headerStart + headerLength do
 		dimOffset = amx.memDAT[offset]
+		if not dimOffset then break end
 		table.insert(dimensions, dimOffset/divideBy - 1)
 		divideBy = dimOffset
 		prevOffset = offset
@@ -605,6 +606,7 @@ function binsar(val, dist)
 end
 
 function sgn(val, amx)
+	if not val then return val end
 	if val >= 0x80000000 then
 		val = -(binnot(val) + 1)
 	end

@@ -153,7 +153,7 @@ function decompileBlock(amx, from, to, indent, catchAllStatements, elseIfAddr)
 	amx.CIP = from
 	local opcode, numArgs
 	local args = {}
-	while amx.CIP < to do
+	while to and amx.CIP < to do
 		removePastOpcodeAddrs(amx)
 		opcode = amx.memCOD[amx.CIP]
 		--print(('%d %X (%d)'):format(indent or 0, amx.CIP, opcode))
@@ -246,7 +246,7 @@ function decompileBlock(amx, from, to, indent, catchAllStatements, elseIfAddr)
 					result = result .. indentstr .. 'while(' .. node[1] .. ')\n' .. decompileBlock(amx, amx.CIP, whileloop.loopend, indent+1)
 				else
 					-- if/else
-					if amx.memCOD[node.endpoint-8] == 51 then
+					if node.endpoint and amx.memCOD[node.endpoint-8] == 51 then
 						--print('Writing if/else')
 						local upcomingBreak = findClosestInstrsAfter(amx, 137, amx.memCOD[node.endpoint] == 137 and node.endpoint+4 or node.endpoint, amx.memCOD[node.endpoint-4], 1)
 						local isElseif = #upcomingBreak == 1 and isCondOpcode(amx.memCOD[upcomingBreak[1]-8]) and
@@ -347,6 +347,7 @@ function listGlobalVars(amx)
 				local length = i < #sortedGlobalVars and (sortedGlobalVars[i+1].addr - addr)/4
 				if not length or length == 1 then
 					data = sgn(amx.memDAT[addr])
+					if not data then data = 0 end
 					result = result .. 'new ' .. name .. (data == 0 and '' or (' = ' .. data)) .. ';\n\n'
 				else
 					glob.dimensions = { length }
@@ -414,7 +415,9 @@ function dumpGlobalArray(amx, addr, type, dimensions, curdim, baseindent)
 			else
 				val = sgn(val)
 			end
-			result = result .. val
+			if val then
+				result = result .. val
+			end
 		end
 		return result .. ' }'
 	end
