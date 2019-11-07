@@ -1,5 +1,5 @@
 function syscall(amx, svcnum)
-	createFunctionCall(amx, amx.natives[svcnum], g_SAMPSyscallPrototypes[amx.natives[svcnum]])
+	pcall(createFunctionCall,amx, amx.natives[svcnum], g_SAMPSyscallPrototypes[amx.natives[svcnum]])
 end
 
 g_SyscallReplace = {
