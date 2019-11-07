@@ -7,7 +7,8 @@ I am just updating it in my free times.
 
 ----------------------
 
-# What's New? :
+# Features :
+- Now it bypasses all anti-deamx method, thanks to [@IllidanS4](https://github.com/IllidanS4)
 - Added all SA:MP functions till 0.3.7.
 - Added new type of vars. (e.g: PlayerText, Text3D, PlayerText3D and etc..)
 - Added all SA:MP callbacks till 0.3.7.
@@ -19,4 +20,3 @@ I am just updating it in my free times.
 
 # To Do:
 - Adding some famous includes like streamer, sscanf and etc.
-- Adding Anti-DeAMX bypass
