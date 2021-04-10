@@ -28,7 +28,7 @@ I am just updating it in my free times.
 	DeAMX is a collection of Lua scripts, which means you need
 	Lua to run it. If you don't have Lua yet, you can get it for
 	free from the official download page:
-	  http://luabinaries.luaforge.net/download.html
+	  http://luabinaries.sourceforge.net/
 	
 	Once you have Lua, there are two ways to decompile a script:
 	- Place the .lua files and the .bat file in some folder,
@@ -44,7 +44,7 @@ I am just updating it in my free times.
 	- Or, place the .lua files in the folder where you installed
 	  Lua, open a command prompt in the Lua folder, and type:
 	  
-	    lua5.1 deamx.lua path\to\amxfile.amx
+	    luaX deamx.lua path\to\amxfile.amx
 		
     In both cases, the .amx file will be decompiled and the
 	resulting code will be placed in a .pwn file in the same
