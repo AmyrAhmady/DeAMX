@@ -31,7 +31,7 @@ I am just updating it in my free times.
 	  http://luabinaries.sourceforge.net/
 	
 	Once you have Lua, there are two ways to decompile a script:
-	- Place the .lua files and the .bat file in some folder,
+	- Place the .lua files in some folder and create a .bat file ,
 	  edit the bat file in a text editor like Notepad, and make
 	  sure the path to lua5.1.exe is correct. Save the file and
 	  close it.
