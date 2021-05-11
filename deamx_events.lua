@@ -98,5 +98,7 @@ g_SAMPEventParamNames = {
 	IsPlayerInDynamicCP = { 'playerid', 'checkpointid' },
 	GetPlayerVisibleDynamicCP = { 'playerid' },
 
+	
+
 
 }
