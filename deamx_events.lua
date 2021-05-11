@@ -84,8 +84,19 @@ g_SAMPEventParamNames = {
 	RemoveDynamicObjectMaterialText = { 'objectid', 'materialindex' },
 	GetDynamicObjectMaterialText = { 'objectid', 'materialindex', 'text[]', 'materialsize', 'fontface[]', 'fontsize', 'bold', 'fontcolor', 'backcolor', 'textalignment', 'maxtext', 'maxfontface' },
 	SetDynamicObjectMaterialText = { 'objectid', 'materialindex', 'text[]', 'materialsize', 'fontface[]', 'fontsize', 'bold', 'fontcolor', 'backcolor', 'textalignment' },
-	GetPlayerCameraTargetDynObject = { 'playerid' }
+	GetPlayerCameraTargetDynObject = { 'playerid' },
 
+	CreateDynamicPickup = { 'modelid', 'type', 'Float:x', 'Float:y', 'Float:z', 'worldid', 'interiorid', 'playerid', 'Float:streamdistance', 'areaid', 'priority' },
+	DestroyDynamicPickup = { 'pickupid' },
+	IsValidDynamicPickup = { 'pickupid' },
+
+	CreateDynamicCP = { 'Float:x', 'Float:y', 'Float:z', 'Float:size', 'worldid', 'interiorid', 'playerid', 'Float:streamdistance', 'areaid', 'priority' },
+	DestroyDynamicCP = { 'checkpointid' },
+	IsValidDynamicCP = { 'checkpointid' },
+	TogglePlayerDynamicCP = { 'playerid', 'checkpointid', 'toggle' },
+	TogglePlayerAllDynamicCPs = { 'playerid', 'toggle' },
+	IsPlayerInDynamicCP = { 'playerid', 'checkpointid' },
+	GetPlayerVisibleDynamicCP = { 'playerid' },
 
 
 }
