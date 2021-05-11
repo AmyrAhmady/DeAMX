@@ -60,5 +60,32 @@ g_SAMPEventParamNames = {
 	OnIncomingConnection = {'playerid', 'ip_address[]', 'port'},
 	OnObjectMoved = {'objectid'},
 	OnPlayerClickMap = {'playerid', 'Float:fX', 'Float:fY', 'Float:fZ'},
-	OnDialogResponse = {'playerid', 'dialogid', 'response', 'listitem', 'inputtext[]'}
+	OnDialogResponse = {'playerid', 'dialogid', 'response', 'listitem', 'inputtext[]'},
+
+	CreateDynamicObject = { 'modelid', 'Float:x', 'Float:y', 'Float:z', 'Float:rx', 'Float:ry', 'Float:rz', 'worldid', 'interiorid', 'playerid', 'Float:streamdistance', 'Float:drawdistance', 'areaid', 'priority' },
+	DestroyDynamicObject = { 'objectid' },
+	IsValidDynamicObject = { 'objectid' },
+	GetDynamicObjectPos = { 'objectid', 'Float:x', 'Float:y', 'Float:z' },
+	SetDynamicObjectPos = { 'objectid', 'Float:x', 'Float:y', 'Float:z' },
+	GetDynamicObjectRot = { 'objectid', 'Float:rx', 'Float:ry', 'Float:rz' },
+	SetDynamicObjectRot = { 'objectid', 'Float:rx', 'Float:ry', 'Float:rz' },
+	MoveDynamicObject = { 'objectid', 'Float:x', 'Float:y', 'Float:z', 'Float:speed', 'Float:rx', 'Float:ry', 'Float:rz' },
+	StopDynamicObject = { 'objectid' },
+	IsDynamicObjectMoving = { 'objectid' },
+	AttachCameraToDynamicObject = { 'playerid', 'objectid' },
+	AttachDynamicObjectToObject = { 'objectid', 'attachtoid', 'Float:offsetx', 'Float:offsety', 'Float:offsetz', 'Float:rx', 'Float:ry', 'Float:rz', 'syncrotation' },
+	AttachDynamicObjectToVehicle = { 'objectid', 'vehicleid', 'Float:offsetx', 'Float:offsety', 'Float:offsetz', 'Float:rx', 'Float:ry', 'Float:rz' },
+	EditDynamicObject = { 'playerid', 'objectid' },
+	IsDynamicObjectMaterialUsed = { 'objectid', 'materialindex' },
+	RemoveDynamicObjectMaterial = { 'objectid', 'materialindex' },
+	GetDynamicObjectMaterial = { 'objectid', 'materialindex', 'modelid', 'txdname[]', 'texturename[]', 'materialcolor', 'maxtxdname', 'maxtexturename' },
+	SetDynamicObjectMaterial = { 'objectid', 'materialindex', 'modelid', 'txdname[]', 'texturename[]', 'materialcolor' },
+	IsDynamicObjectMaterialTextUsed = { 'objectid', 'materialindex' },
+	RemoveDynamicObjectMaterialText = { 'objectid', 'materialindex' },
+	GetDynamicObjectMaterialText = { 'objectid', 'materialindex', 'text[]', 'materialsize', 'fontface[]', 'fontsize', 'bold', 'fontcolor', 'backcolor', 'textalignment', 'maxtext', 'maxfontface' },
+	SetDynamicObjectMaterialText = { 'objectid', 'materialindex', 'text[]', 'materialsize', 'fontface[]', 'fontsize', 'bold', 'fontcolor', 'backcolor', 'textalignment' },
+	GetPlayerCameraTargetDynObject = { 'playerid' }
+
+
+
 }

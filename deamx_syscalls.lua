@@ -1132,5 +1132,29 @@ g_SAMPSyscallPrototypes = {
 	tickcount = {'r'},
 
 
+	CreateDynamicObject = { 'i', 'f', 'f', 'f', 'f', 'f', 'f', 'i', 'i', 'p', 'f', 'f', 'i', 'i' },
+	DestroyDynamicObject = { 'o' },
+	IsValidDynamicObject = { 'o' },
+	GetDynamicObjectPos = { 'o', 'f', 'f', 'f' },
+	SetDynamicObjectPos = { 'o', 'f', 'f', 'f' },
+	GetDynamicObjectRot = { 'o', 'f', 'f', 'f' },
+	SetDynamicObjectRot = { 'o', 'f', 'f', 'f' },
+	MoveDynamicObject = { 'o', 'f', 'f', 'f', 'f', 'f', 'f', 'f' },
+	StopDynamicObject = { 'o' },
+	IsDynamicObjectMoving = { 'o' },
+	AttachCameraToDynamicObject = { 'p', 'o' },
+	AttachDynamicObjectToObject = { 'o', 'o', 'f', 'f', 'f', 'f', 'f', 'f', 'i' },
+	AttachDynamicObjectToVehicle = { 'o', 'v', 'f', 'f', 'f', 'f', 'f', 'f' },
+	EditDynamicObject = { 'p', 'o' },
+	IsDynamicObjectMaterialUsed = { 'o', 'i' },
+	RemoveDynamicObjectMaterial = { 'o', 'i' },
+	GetDynamicObjectMaterial = { 'o', 'i', 'i', 's', 's', 'i', 'i', 'i' },
+	SetDynamicObjectMaterial = { 'o', 'i', 'i', 's', 's', 'i' },
+	IsDynamicObjectMaterialTextUsed = { 'o', 'i' },
+	RemoveDynamicObjectMaterialText = { 'o', 'i' },
+	GetDynamicObjectMaterialText = { 'o', 'i', 's', 'i', 's', 'i', 'i', 'i', 'i', 'i', 'i', 'i' },
+	SetDynamicObjectMaterialText = { 'o', 'i', 's', 'i', 's', 'i', 'i', 'i', 'i', 'i' },
+	GetPlayerCameraTargetDynObject = { 'p' }
+
 
 }
