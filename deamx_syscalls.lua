@@ -1154,7 +1154,11 @@ g_SAMPSyscallPrototypes = {
 	RemoveDynamicObjectMaterialText = { 'o', 'i' },
 	GetDynamicObjectMaterialText = { 'o', 'i', 's', 'i', 's', 'i', 'i', 'i', 'i', 'i', 'i', 'i' },
 	SetDynamicObjectMaterialText = { 'o', 'i', 's', 'i', 's', 'i', 'i', 'i', 'i', 'i' },
-	GetPlayerCameraTargetDynObject = { 'p' }
+	GetPlayerCameraTargetDynObject = { 'p' },
+
+	CreateDynamicPickup = { 'i', 'i', 'f', 'f', 'f', 'i', 'i', 'p', 'f', 'i', 'i' },
+	DestroyDynamicPickup = { 'i' },
+	IsValidDynamicPickup = { 'i' },
 
 
 }
