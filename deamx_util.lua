@@ -275,7 +275,7 @@ function getOpcodeAddrs(amx, from, to, ...)
 		end
 		cip = step(amx, cip, opcode)
 	end
-	return unpack(results)
+	return table.unpack(results)
 end
 
 -----------------------------

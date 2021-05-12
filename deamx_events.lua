@@ -61,4 +61,8 @@ g_SAMPEventParamNames = {
 	OnObjectMoved = {'objectid'},
 	OnPlayerClickMap = {'playerid', 'Float:fX', 'Float:fY', 'Float:fZ'},
 	OnDialogResponse = {'playerid', 'dialogid', 'response', 'listitem', 'inputtext[]'}
+
+	
+
+
 }
