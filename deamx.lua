@@ -279,7 +279,7 @@ function decompileBlock(amx, from, to, indent, catchAllStatements, elseIfAddr)
 				args[i] = nil
 			end
 			amx.CIP = amx.CIP + 4 + 4*numArgs
-			pcall(g_AMXOpcodes[opcode][2], amx, unpack(args))
+			pcall(g_AMXOpcodes[opcode][2], amx, table.unpack(args))
 		end
 	end
 	collectNewFrameVars(amx, true)

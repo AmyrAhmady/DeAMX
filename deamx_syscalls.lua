@@ -178,7 +178,7 @@ function createFunctionCall(amx, fnName, prototype, replaceFn)
 		for i=1,#args do
 			args[i] = { args[i], outerop = amx.frameVars[amx.STK+4*i].outerop }
 		end
-		amx.PRI = replaceFn(unpack(args))
+		amx.PRI = replaceFn(table.unpack(args))
 		return numArgs
 	end
 	amx.PRI = { fnName .. '(' .. table.concat(args, ', ') .. ')' }
